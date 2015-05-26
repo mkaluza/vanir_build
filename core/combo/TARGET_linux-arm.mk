@@ -116,12 +116,6 @@ TARGET_thumb_CFLAGS :=  -mthumb \
                         -fomit-frame-pointer $(TARGET_THUMB_BULLSHIT) \
                         $(TARGET_THUMB_STRICT) $(STRICT_ALIASING_WARNINGS) $(DEBUG_SYMBOL_FLAGS)
 
-opt_flags += \
-			-O3
-
-TARGET_GLOBAL_CPPFLAGS += $(opt_flags)
-TARGET_GLOBAL_CFLAGS += $(opt_flags)
-
 #SHUT THE F$#@ UP!
 TARGET_arm_CFLAGS +=    -Wno-unused-parameter \
                         -Wno-unused-value \
