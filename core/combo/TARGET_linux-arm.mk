@@ -128,7 +128,6 @@ TARGET_thumb_CFLAGS +=  -Wno-unused-parameter \
 # Global defines for skia neon optimization
 ifeq ($(ARCH_ARM_HAVE_NEON),true)
   TARGET_GLOBAL_CFLAGS += -DSKPAINTOPTIONS_OPT
-  TARGET_GLOBAL_CPPFLAGS += -DSKPAINTOPTIONS_OPT
 endif
 
 # Turn off strict-aliasing if we're building an AOSP variant without the
@@ -186,9 +185,6 @@ TARGET_GLOBAL_CFLAGS += \
 			-include $(android_config_h) \
 			-I $(dir $(android_config_h)) \
 			$(STRICT_ALIASING_WARNINGS) $(DEBUG_SYMBOL_FLAGS) $(DEBUG_FRAME_POINTER_FLAGS)
-
-TARGET_GLOBAL_CPPFLAGS += \
-			$(arch_variant_cflags)
 
 android_config_h := $(call select-android-config-h,linux-arm)
 TARGET_ANDROID_CONFIG_CFLAGS := -include $(android_config_h) -I $(dir $(android_config_h))
