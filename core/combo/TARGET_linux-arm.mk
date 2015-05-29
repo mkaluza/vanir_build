@@ -176,6 +176,9 @@ ARCHI_FLAGS := \
 		-ftree-loop-im \
 		-ftree-loop-ivcanon
 
+ARCHI_FLAGS += \
+		-Wno-error=maybe-uninitialized \
+
 PARAMS := \
 		--param l1-cache-size=32 \
 		--param l1-cache-line-size=32 \
