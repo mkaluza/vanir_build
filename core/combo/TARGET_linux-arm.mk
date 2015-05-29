@@ -184,6 +184,20 @@ PARAMS := \
 		--param l1-cache-line-size=32 \
 		--param l2-cache-size=512 \
 
+#those are enabled by ENABLE_GRAPHITE := true
+#loop-block-tile-size param?
+GRAPHITE_FLAGS := \
+		-floop-interchange \
+		-floop-strip-mine \
+		-floop-block \
+		-ftree-loop-distribution
+
+#graphite extra flags
+GRAPHITE_EXTRA_FLAGS := \
+		-floop-nest-optimize \
+		-floop-parallelize-all \
+		-ftree-loop-if-convert \
+
 TARGET_GLOBAL_CFLAGS += \
 			-msoft-float -fpic $(PIE_GLOBAL_CFLAGS) \
 			$(ARCHI_FLAGS) \

@@ -142,8 +142,8 @@ endif
 
 ifeq ($(strip $(ENABLE_GRAPHITE)),true)
   ifeq ($(strip $(LOCAL_DISABLE_GRAPHITE)$(LOCAL_CLANG)$(LOCAL_IS_HOST_MODULE)),)
-    LOCAL_CFLAGS += -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block
-    LOCAL_CPPFLAGS += -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block
+    LOCAL_CFLAGS += -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block $(GRAPHITE_EXTRA_FLAGS)
+    LOCAL_CPPFLAGS += -floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-block $(GRAPHITE_EXTRA_FLAGS)
   endif
 endif
 
