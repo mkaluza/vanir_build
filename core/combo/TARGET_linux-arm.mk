@@ -192,8 +192,8 @@ GRAPHITE_FLAGS := \
 		-floop-block \
 		-ftree-loop-distribution
 
-#graphite extra flags
-GRAPHITE_EXTRA_FLAGS := \
+#graphite extra flags - cause internal compiler error with 4.8/aosp
+#GRAPHITE_EXTRA_FLAGS := \
 		-floop-nest-optimize \
 		-floop-parallelize-all \
 		-ftree-loop-if-convert \
