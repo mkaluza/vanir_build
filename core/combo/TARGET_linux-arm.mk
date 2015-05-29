@@ -167,9 +167,24 @@ ifeq ($(filter 4.6 4.6.% 4.7 4.7.%, $(shell $(TARGET_CC) --version)),)
 NO_CANONICAL_SYSTEM_HEADERS := \
 			-fno-canonical-system-headers
 endif
+ARCHI_FLAGS := \
+		-fsection-anchors \
+		-fgcse-las \
+		-fgcse-sm \
+		-fivopts \
+		-ftracer \
+		-ftree-loop-im \
+		-ftree-loop-ivcanon
+
+PARAMS := \
+		--param l1-cache-size=32 \
+		--param l1-cache-line-size=32 \
+		--param l2-cache-size=512 \
 
 TARGET_GLOBAL_CFLAGS += \
 			-msoft-float -fpic $(PIE_GLOBAL_CFLAGS) \
+			$(ARCHI_FLAGS) \
+			$(PARAMS) \
 			-ffunction-sections \
 			-fdata-sections \
 			-funwind-tables \
