@@ -67,10 +67,10 @@ ifneq ($(filter 4.7 4.7.%, $(shell $(TARGET_CC) --version)),)
 TARGET_EXTRA_BULLSHIT_1 += \
                        -ftree-vectorize
 endif
-TARGET_EXTRA_BULLSHIT_2 += \
-                       -funsafe-loop-optimizations
-TARGET_THUMB_BULLSHIT += \
-                       -funsafe-math-optimizations
+#TARGET_EXTRA_BULLSHIT_2 += \
+#                       -funsafe-loop-optimizations
+#TARGET_THUMB_BULLSHIT += \
+#                       -funsafe-math-optimizations
 else
 TARGET_ARM_O := 2
 TARGET_THUMB_O := s
