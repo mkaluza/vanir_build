@@ -78,6 +78,9 @@ TARGET_THUMB_STRICT := \
     -fno-strict-aliasing
 endif
 
+TARGET_THUMB_STRICT := \
+    -fno-strict-aliasing
+
 include $(TARGET_ARCH_SPECIFIC_MAKEFILE)
 
 # You can set TARGET_TOOLS_PREFIX to get gcc from somewhere else
@@ -209,7 +212,6 @@ TARGET_GLOBAL_CFLAGS += \
 			-Wa,--noexecstack \
 			-Werror=format-security \
 			-D_FORTIFY_SOURCE=0 \
-			-fstrict-aliasing \
 			-fno-short-enums \
 			-pipe \
 			-no-canonical-prefixes $(NO_CANONICAL_SYSTEM_HEADERS)\
