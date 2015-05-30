@@ -179,6 +179,11 @@ ARCHI_FLAGS := \
 ARCHI_FLAGS += \
 		-Wno-error=maybe-uninitialized \
 
+#neo
+ARCHI_FLAGS += \
+		-Wno-error=unused-parameter \
+		-Wno-error=unused-but-set-variable \
+
 PARAMS := \
 		--param l1-cache-size=32 \
 		--param l1-cache-line-size=32 \
