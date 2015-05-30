@@ -50,7 +50,7 @@ endif
 
 ifeq ($(strip $(DONT_WARN_STRICT_ALIASING)),)
 STRICT_ALIASING_WARNINGS := \
-                        -Wstrict-aliasing=2 \
+                        -Wstrict-aliasing=3 \
                         -Werror=strict-aliasing
 else
 STRICT_ALIASING_WARNINGS := \

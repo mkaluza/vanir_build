@@ -64,7 +64,7 @@ ifeq ($(strip $(BONE_STOCK)),)
 ifeq ($(DONT_WARN_STRICT_ALIASING),)
 $(combo_target)RELEASE_CFLAGS := -O3 $(DEBUG_SYMBOL_FLAGS)
 ifneq ($(strip $(combo_target)),HOST_)
-$(combo_target)RELEASE_CFLAGS += -Wstrict-aliasing=2 -Werror=strict-aliasing
+$(combo_target)RELEASE_CFLAGS += -Wstrict-aliasing=3 -Werror=strict-aliasing
 else
 $(combo_target)RELEASE_CFLAGS += -Wno-error=strict-aliasing -Wno-strict-aliasing
 endif
