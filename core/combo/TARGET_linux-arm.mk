@@ -59,7 +59,7 @@ endif
 
 ifeq ($(strip $(BONE_STOCK)),)
 TARGET_ARM_O := 3
-TARGET_THUMB_O := s
+TARGET_THUMB_O := 2
 TARGET_THUMB_STRICT := \
     -fstrict-aliasing
 # aosp gcc 4.7 barfs with ftree-vectorize
