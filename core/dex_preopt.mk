@@ -34,11 +34,13 @@ endef
 # $(1): the input .jar or .apk file
 # $(2): the output .odex file
 define dexpreopt-one-file
+ifeq ($(filter $(SKIP_DEXPREOPT),$(1)),)
 $(hide) $(DEXPREOPT) --dexopt=$(DEXPREOPT_DEXOPT) --build-dir=$(DEXPREOPT_BUILD_DIR) \
 	--product-dir=$(DEXPREOPT_PRODUCT_DIR) --boot-dir=$(DEXPREOPT_BOOT_JAR_DIR) \
 	--boot-jars=$(DEXPREOPT_BOOT_JARS) $(DEXPREOPT_UNIPROCESSOR) \
 	$(patsubst $(DEXPREOPT_BUILD_DIR)/%,%,$(1)) \
 	$(patsubst $(DEXPREOPT_BUILD_DIR)/%,%,$(2))
+endif
 endef
 
 # $(1): boot jar module name
