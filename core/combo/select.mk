@@ -79,7 +79,7 @@ endif
 ifeq ($(DEBUG_NO_STRICT_ALIASING),yes)
 $(combo_target)RELEASE_CFLAGS += -fno-strict-aliasing -Wno-error=strict-aliasing
 endif
-$(combo_target)GLOBAL_LDFLAGS := -Wl,-O2 -Wl,--sort-common -s
+$(combo_target)GLOBAL_LDFLAGS := -Wl,-O2 -Wl,--sort-common -s -Wl,--as-needed -Wl,--relax -Wl,--gc-sections
 else
 $(warning USING BONE STOCK CFLAGS)
 $(combo_target)RELEASE_CFLAGS := -O2 -g -fno-strict-aliasing
