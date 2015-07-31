@@ -177,6 +177,19 @@ ARCHI_FLAGS := \
 		-ftree-loop-ivcanon
 
 ARCHI_FLAGS += \
+		-ftree-vectorize \
+		-ftree-loop-distribution \
+		-fira-loop-pressure \
+
+#ARCHI_FLAGS += \
+			-fira-region=mixed \
+			-ftree-loop-distribute-patterns \
+			-ftree-partial-pre \
+
+# \
+		-ftree-loop-vectorize \
+
+ARCHI_FLAGS += \
 		-Wno-error=maybe-uninitialized \
 
 #neo
